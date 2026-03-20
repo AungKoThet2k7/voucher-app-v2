@@ -15,7 +15,7 @@ const useVoucherDetail = () => {
   const { id } = useParams();
 
   const { data, error, isLoading } = useSWR(
-    import.meta.env.VITE_API_URL + "/vouchers/" + id,
+    import.meta.env.VITE_API_URL + "/dashboard/vouchers/" + id,
     fetcher
   );
 

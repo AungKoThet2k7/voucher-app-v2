@@ -11,7 +11,7 @@ const useProduct = () => {
   const [params, setParams] = useSearchParams();
 
   const [fetchUrl, setFetchUrl] = useState(
-    import.meta.env.VITE_API_URL + "/products" + location.search
+    import.meta.env.VITE_API_URL + "/dashboard/products" + location.search,
   );
 
   const { data, error, isLoading } = useSWR(fetchUrl, fetchProducts);
@@ -20,11 +20,11 @@ const useProduct = () => {
     if (e.target.value) {
       setParams({ q: e.target.value });
       setFetchUrl(
-        import.meta.env.VITE_API_URL + `/products?q=${e.target.value}`
+        import.meta.env.VITE_API_URL + `/products?q=${e.target.value}`,
       );
     } else {
       setParams({});
-      setFetchUrl(import.meta.env.VITE_API_URL + "/products");
+      setFetchUrl(import.meta.env.VITE_API_URL + "/dashboard/products");
     }
   }, 500);
 

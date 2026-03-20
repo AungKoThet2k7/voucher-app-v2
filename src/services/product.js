@@ -9,7 +9,7 @@ export const fetchProducts = (url) =>
   }).then((res) => res.json());
 
 export const storeProducts = (product_name, price) => {
-  return fetch(import.meta.env.VITE_API_URL + "/products", {
+  return fetch(import.meta.env.VITE_API_URL + "/dashboard/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const deleteProduct = (id) => {
 };
 
 export const updateProduct = (id, product_name, price) => {
-  return fetch(import.meta.env.VITE_API_URL + "/products/" + id, {
+  return fetch(import.meta.env.VITE_API_URL + "/dashboard/products" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

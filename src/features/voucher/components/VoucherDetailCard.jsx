@@ -8,6 +8,8 @@ const VoucherDetailCard = () => {
 
   if (isLoading) return <BtnSpinner />;
 
+  console.log(data);
+
   return (
     <div className="flex gap-3">
       <div
@@ -83,7 +85,7 @@ const VoucherDetailCard = () => {
                   Total
                 </th>
                 <td className="px-5 py-4 text-right">
-                  {data?.data?.total.toFixed(2)}
+                  {Number(data?.data?.total).toFixed(2)}
                 </td>
               </tr>
               <tr className="border-b">
@@ -95,7 +97,7 @@ const VoucherDetailCard = () => {
                   Tax
                 </th>
                 <td className="px-5 py-4 text-right" id="recordTax">
-                  {data?.data?.tax.toFixed(2)}
+                  {Number(data?.data?.tax).toFixed(2)}
                 </td>
               </tr>
               <tr className="border-b">
@@ -107,7 +109,7 @@ const VoucherDetailCard = () => {
                   Net Total
                 </th>
                 <td className="px-5 py-4 text-end" id="recordNetTotal">
-                  {data?.data?.net_total.toFixed(2)}
+                  {Number(data?.data?.net_total).toFixed(2)}
                 </td>
               </tr>
             </tfoot>

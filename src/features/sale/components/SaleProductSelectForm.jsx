@@ -10,7 +10,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const SaleProductSelectForm = () => {
 
   const { data, isLoading, error } = useSWR(
-    import.meta.env.VITE_API_URL + "/products?limit=100",
+    import.meta.env.VITE_API_URL + "/dashboard/products?limit=100",
     fetchProducts
   );
 

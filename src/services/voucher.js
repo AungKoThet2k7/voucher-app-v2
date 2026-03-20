@@ -19,7 +19,7 @@ export const deleteVoucher = (id) => {
 };
 
 export const storeVoucher = (currrentVoucher) => {
-  return fetch(import.meta.env.VITE_API_URL + "/vouchers", {
+  return fetch(import.meta.env.VITE_API_URL + "/dashboard/vouchers", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const useVoucher = () => {
   const [params, setParams] = useSearchParams();
 
   const [fetchUrl, setFetchUrl] = useState(
-    import.meta.env.VITE_API_URL + "/vouchers" + location.search
+    import.meta.env.VITE_API_URL + "/dashboard/vouchers" + location.search,
   );
 
   const { data, error, isLoading } = useSWR(fetchUrl, fetchVouchers);
@@ -20,11 +20,11 @@ const useVoucher = () => {
     if (e.target.value) {
       setParams({ q: e.target.value });
       setFetchUrl(
-        import.meta.env.VITE_API_URL + `/vouchers?q=${e.target.value}`
+        import.meta.env.VITE_API_URL + `/dashboard/vouchers?q=${e.target.value}`,
       );
     } else {
       setParams({});
-      setFetchUrl(import.meta.env.VITE_API_URL + "/vouchers");
+      setFetchUrl(import.meta.env.VITE_API_URL + "/dashboard/vouchers");
     }
   }, 500);
 
@@ -36,7 +36,7 @@ const useVoucher = () => {
   const handleSort = (sortData) => {
     const sortParams = new URLSearchParams(sortData).toString();
     setParams(sortData);
-    setFetchUrl(import.meta.env.VITE_API_URL + `/vouchers?${sortParams}`);
+    setFetchUrl(import.meta.env.VITE_API_URL + `/dashboard/vouchers?${sortParams}`);
   };
 
   return {

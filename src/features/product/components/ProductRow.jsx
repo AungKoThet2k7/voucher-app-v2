@@ -29,7 +29,7 @@ const ProductRow = ({ product: { id, product_name, price, created_at, updated_at
 
     if (res.status === 200) {
       toast.success(json.message);
-      mutate(import.meta.env.VITE_API_URL + "/products");
+      mutate(import.meta.env.VITE_API_URL + "/dashboard/products");
     } else {
       toast.error(json.message);
     }

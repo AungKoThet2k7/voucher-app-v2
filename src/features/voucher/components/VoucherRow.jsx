@@ -15,7 +15,7 @@ import Avatar from "react-avatar";
 lineSpinner.register();
 
 const VoucherRow = ({
-  voucher: { id,voucher_id, customer_name, customer_email, total, created_at },
+  voucher: { id, voucher_id, customer_name, customer_email, total, created_at },
 }) => {
   // console.log(id);
 
@@ -34,7 +34,7 @@ const VoucherRow = ({
 
     if (res.status === 200) {
       toast.success(json.message);
-      mutate(import.meta.env.VITE_API_URL + "/vouchers");
+      mutate(import.meta.env.VITE_API_URL + "/dashboard/vouchers");
     } else {
       toast.error(json.message);
     }
@@ -49,7 +49,9 @@ const VoucherRow = ({
       >
         {id}
       </th>
-      <td className="px-6 py-4 font-bold text-gray-700 text-nowrap">{voucher_id}</td>
+      <td className="px-6 py-4 font-bold text-gray-700 text-nowrap">
+        {voucher_id}
+      </td>
       <td className="px-6 py-4 font-bold text-gray-700 text-nowrap">
         <Avatar name={customer_name} size="30" round={true} /> {customer_name}
       </td>

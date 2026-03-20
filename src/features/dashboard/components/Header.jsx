@@ -14,7 +14,7 @@ const Header = () => {
       <Container>
         <div className="flex justify-between">
           <div>
-            <h1 className="text-3xl font-bold">Voucher App</h1>
+            <h1 className="text-3xl font-bold">Invoice App</h1>
             <p className="text-gray-500">MMS IT</p>
           </div>
 

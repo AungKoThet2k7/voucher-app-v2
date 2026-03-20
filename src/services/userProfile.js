@@ -27,3 +27,18 @@ export const changeImage = (formData) => {
       }
     );
 }
+
+export const changePassword = (data) => {
+  return fetch(
+    import.meta.env.VITE_API_URL + "/dashboard/user-profile/change-password",
+    {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

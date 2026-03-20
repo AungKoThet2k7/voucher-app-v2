@@ -8,8 +8,6 @@ const VoucherDetailCard = () => {
 
   if (isLoading) return <BtnSpinner />;
 
-  console.log(data);
-
   return (
     <div className="flex gap-3">
       <div

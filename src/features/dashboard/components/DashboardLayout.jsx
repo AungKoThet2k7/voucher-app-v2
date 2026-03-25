@@ -19,7 +19,7 @@ const DashboardLayout = () => {
   }, []);
 
   if (!token) {
-    return <Navigate to="/" />;
+    return <Navigate to="/login" />;
   }
 
   return (
